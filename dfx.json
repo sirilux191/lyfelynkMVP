@@ -1,0 +1,26 @@
+{
+  "canisters": {
+    "lyfeMVP_backend": {
+      "main": "src/lyfeMVP_backend/main.mo",
+      "type": "motoko"
+    },
+    "lyfeMVP_frontend": {
+      "dependencies": [
+        "lyfeMVP_backend"
+      ],
+      "source": [
+        "src/lyfeMVP_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "lyfeMVP_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
