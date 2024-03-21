@@ -19,7 +19,7 @@ export default function DashboardContent() {
                   alt="How to Create Health ID"
                   className="object-cover w-full h-full rounded-lg"
                   height={900}
-                  src="/assets/carousel1.png"
+                  src="assets/carousel1.png"
                   style={{
                     aspectRatio: "1600/900",
                     objectFit: "cover",
@@ -32,7 +32,7 @@ export default function DashboardContent() {
                   alt="How to Create Health ID"
                   className="object-cover w-full h-full rounded-lg"
                   height={900}
-                  src="/assets/carousel1.png"
+                  src="assets/carousel1.png"
                   style={{
                     aspectRatio: "1600/900",
                     objectFit: "cover",
@@ -45,7 +45,7 @@ export default function DashboardContent() {
                   alt="How to Create Health ID"
                   className="object-cover w-full h-full rounded-lg"
                   height={900}
-                  src="/assets/carousel1.png"
+                  src="assets/carousel1.png"
                   style={{
                     aspectRatio: "1600/900",
                     objectFit: "cover",
