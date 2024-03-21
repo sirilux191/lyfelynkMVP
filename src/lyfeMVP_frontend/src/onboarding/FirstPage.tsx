@@ -1,5 +1,4 @@
-import { Button } from "@/components/ui/button"
-
+import { Button } from "@/components/ui/button";
 import { ChevronRight } from 'lucide-react';
 import { User } from 'lucide-react';
 import { BriefcaseMedical } from 'lucide-react';
@@ -27,10 +26,9 @@ export default function FirstPageContent() {
             <Button>Connect</Button>
           </div>
           <p className="text-sm text-gray-500 mb-4">Login/Register As</p>
-          <div className="space-y-4">
-
+          <div>
             <Link to="/Health-User">
-              <Button className="flex justify-between items-center w-full border border-gray-300 p-3 rounded-md" variant="secondary">
+              <Button className="flex justify-between items-center w-full border border-gray-300 p-3 rounded-md mb-2" variant="secondary">
                 <div className="flex items-center">
                   <User className="text-primary"/>
                   <span className="ml-2 font-bold">Health User</span>
@@ -38,25 +36,29 @@ export default function FirstPageContent() {
                 <ChevronRight/>
               </Button>
             </Link>
+          
+            <Link to="/Health-Professional">
+              <Button className="flex justify-between items-center w-full border border-gray-300 p-3 rounded-md mb-2" variant="secondary">
+                <div className="flex items-center">
+                  <BriefcaseMedical className="text-primary"/>
+                  <span className="ml-2 font-bold">Health Professional</span>
+                </div>
+                <ChevronRight/>
+              </Button>
+            </Link>
 
-            <Button className="flex justify-between items-center w-full border border-gray-300 p-3 rounded-md" variant="secondary">
-              <div className="flex items-center">
-                <BriefcaseMedical className="text-primary"/>
-                <span className="ml-2 font-bold">Health Professional</span>
-              </div>
-              <ChevronRight/>
-            </Button>
-            <Button className="flex justify-between items-center w-full border border-gray-300 p-3 rounded-md" variant="secondary">
-              <div className="flex items-center">
-                <Building className="text-primary"/>
-                <span className="ml-2 font-bold">Health Service</span>
-              </div>
-              <ChevronRight/>
-            </Button>
+            <Link to="/Health-Service">
+              <Button className="flex justify-between items-center w-full border border-gray-300 p-3 rounded-md mb-2" variant="secondary">
+                <div className="flex items-center">
+                  <Building className="text-primary"/>
+                  <span className="ml-2 font-bold">Health Service</span>
+                </div>
+                <ChevronRight/>
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
     </section>
   )
 }
-

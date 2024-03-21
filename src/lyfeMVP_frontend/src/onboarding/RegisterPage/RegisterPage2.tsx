@@ -5,24 +5,24 @@ import { SelectValue, SelectTrigger, SelectItem, SelectContent, Select } from "@
 import { ChevronLeft } from 'lucide-react';
 import { Link } from "react-router-dom";
 
-export default function RegisteredContent() {
+export default function RegisterPage2Content() {
   return (
     <section className="px-6 flex justify-center items-center h-screen bg-[conic-gradient(at_bottom_right,_var(--tw-gradient-stops))] from-blue-700 via-blue-800 to-gray-900">
       <div className="flex flex-col lg:flex-row md:w-1/2">
-        <div className="flex-1 flex flex-col justify-center text-white p-4">
+        <div className="flex-1 flex flex-col justify-center text-foreground p-4">
           <div className="flex items-center mb-4">
             <img
               alt="Logo"
               className="h-6 w-6 md:h-10 md:w-10"
-              src="/assets/LyfeLynk.png"/>
+              src="assets/LyfeLynk.png"/>
             <h1 className="text-2xl md:text-4xl font-bold ml-2">Lyfelynk</h1>
           </div>
           <p className="text-xl md:text-2xl">Digitally Linking your health.</p>
         </div>
 
-        <div className="flex-1 items-center max-w-md bg-white rounded-lg p-8">
+        <div className="flex-1 items-center max-w-md bg-background rounded-lg p-8">
           <div className="flex justify-between items-center mb-4">
-            <h2 className="text-xl md:text-2xl font-bold">Register User</h2>
+            <h2 className="text-xl md:text-2xl font-bold">Register Professional</h2>
               <Link to="/">
                   <ChevronLeft/>
               </Link>
@@ -63,7 +63,7 @@ export default function RegisteredContent() {
             <Input placeholder="State" />
             <Input placeholder="Weight in Kg" />
           </div>
-          <Link to='/Health-User/Register/'>
+          <Link to='/Health-Professional/Register'>
             <Button className="w-full">Submit</Button>
           </Link>
         </div>

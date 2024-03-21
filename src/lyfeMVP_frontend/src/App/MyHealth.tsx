@@ -11,7 +11,7 @@ export default function MyHealthContent() {
       <main className="px-8 py-12">
         <section className="text-center">
           <h1 className="text-4xl font-bold mb-2">Upload and Share Your Health Data</h1>
-          <p className="text-gray-600 mb-8">
+          <p className="text-lg text-gray-600 mb-8">
             Easily upload and securely share your health data with professionals or facilities using LyfeLynk.
           </p>
 

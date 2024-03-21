@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { SelectValue, SelectTrigger, SelectItem, SelectContent, Select } from "@/components/ui/select"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ChevronLeft } from "lucide-react";
 import Navbar from "@/App/Navbar";
 
@@ -10,76 +12,124 @@ export default function UploadContent() {
       <section>
         <Navbar/>
       </section>
-      <div className=" md:py-20 p-6 md:flex md:items-center md:justify-center">
-        <div className="bg-white p-6 rounded-lg shadow-lg max-w-2xl w-full">
-          <div className="mb-4">
-            <Link to="/App/MyHealth">
-              <ChevronLeft className="inline-block w-6 h-6 mr-2" />
-              Back
+      <div className="flex flex-col items-center justify-center p-8">
+          <div className="flex items-center justify-between w-full">
+            <Link to="/App/MyHealth/">
+              <div className="flex text-foreground">
+                <ChevronLeft className=" mr-2" />
+                Back
+              </div>
             </Link>
-
+    
           </div>
-          <h1 className="text-2xl font-bold mb-2">Upload Your Health Data</h1>
-          <p className="mb-4 text-gray-600">Choose a format to upload your data.</p>
-          <div className="mb-4">
-            <Tabs defaultValue="Document" className="w-[400px]">
-              <TabsList>
-                <TabsTrigger value="Document">Document</TabsTrigger>
-                <TabsTrigger value="Form">Form</TabsTrigger>
-              </TabsList>
-              <TabsContent value="Document">
-                <p className="text-sm mb-4 text-gray-500">Supported file formats include PDFs, CSVs, XML, JPGs and JPEGs.</p>
-                <div className="flex flex-col items-center justify-center p-6 border-2 border-dashed border-gray-300 rounded-lg mb-4">
-                  <Button className="mb-2">Add Files</Button>
-                  <span className="text-sm text-gray-500">or</span>
-                  <span className="text-sm text-gray-500">drag your files here</span>
-                </div>
-                <Button>Upload</Button>
-              </TabsContent>
+        <h1 className="mt-4 text-4xl font-bold">Upload your Health Data</h1>
+        <p className="mt-2 text-lg text-gray-600">Choose a suitable format to upload your data.</p>
+        <div className="mt-6 w-full max-w-2xl">
+          <Tabs defaultValue="Document">
+            <TabsList className="w-full">
+              <TabsTrigger className="w-1/2" value="Document">Document</TabsTrigger>
+              <TabsTrigger className="w-1/2" value="Form">Form</TabsTrigger>
+            </TabsList>
+            <TabsContent value="Document">
+              <p className="text-sm mb-4 text-gray-500">Supported file formats include PDFs, CSVs, XML, JPGs and JPEGs.</p>
+              <div className="flex flex-col items-center justify-center p-6 border-2 border-dashed border-gray-300 rounded-lg mb-4">
+                <Button className="mb-2">Add Files</Button>
+                <span className="text-sm text-gray-500">or</span>
+                <span className="text-sm text-gray-500">drag your files here</span>
+              </div>
+              <Button>Upload</Button>
+            </TabsContent>
 
-              <TabsContent value="Form">
-                <h2 className="text-sm mb-4 text-gray-500">
-                  Fill the form out carefully and make sure the information is true to your knowledge.
-                </h2>
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="flex flex-col">
-                    <label className="mb-1 font-medium" htmlFor="input1">
-                      Label
-                    </label>
-                    <input className="border rounded px-3 py-2" id="input1" placeholder="Placeholder" type="text" />
-                    <p className="mt-1 text-sm text-gray-600">Description</p>
-                  </div>
-                  <div className="flex flex-col">
-                    <label className="mb-1 font-medium" htmlFor="input2">
-                      Label
-                    </label>
-                    <input className="border rounded px-3 py-2" id="input2" placeholder="Placeholder" type="text" />
-                    <p className="mt-1 text-sm text-gray-600">Description</p>
-                  </div>
-                  <div className="flex flex-col">
-                    <label className="mb-1 font-medium" htmlFor="input3">
-                      Label
-                    </label>
-                    <input className="border rounded px-3 py-2" id="input3" placeholder="Placeholder" type="text" />
-                    <p className="mt-1 text-sm text-gray-600">Description</p>
-                  </div>
-                  <div className="flex flex-col">
-                    <label className="mb-1 font-medium" htmlFor="input4">
-                      Label
-                    </label>
-                    <input className="border rounded px-3 py-2" id="input4" placeholder="Placeholder" type="text" />
-                    <p className="mt-1 text-sm text-gray-600">Description</p>
+            <TabsContent value="Form">
+              <p className="text-sm mb-4 text-gray-500">Fill the form out carefully and make sure the information is true to your knowledge.</p>
+              <form className="space-y-6">
+                <div>
+                  <h2 className="text-xl font-semibold">Health Checkup Details</h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                    <div className="flex flex-col space-y-1.5">
+                      <label className="font-medium" htmlFor="date-of-checkup">
+                        Date of Checkup
+                      </label>
+                      <Input id="date" placeholder="dd/mm/yyyy" />
+                    </div>
+                    <div className="flex flex-col space-y-1.5">
+                      <label className="font-medium" htmlFor="type-of-checkup">
+                        Type of Checkup
+                      </label>
+                      <Select>
+                        <SelectTrigger id="type-of-checkup">
+                          <SelectValue placeholder="Select" />
+                        </SelectTrigger>
+                        <SelectContent position="popper">
+                          <SelectItem value="general">General Checkup</SelectItem>
+                          <SelectItem value="blood-test">Blood Test</SelectItem>
+                          <SelectItem value="cholesterol">Cholesterol Test</SelectItem>
+                          <SelectItem value="cardiac">Cardiac Evaluation</SelectItem>
+                          <SelectItem value="other">Other</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                    <div className="flex flex-col space-y-1.5">
+                      <label className="font-medium" htmlFor="healthcare-provider">
+                        Healthcare Provider/Facility Name
+                      </label>
+                      <Input id="healthcare-provider" placeholder="Enter name" />
+                    </div>
+                    <div className="flex flex-col space-y-1.5">
+                      <label className="font-medium" htmlFor="reason-for-checkup">
+                        Reason for Checkup
+                      </label>
+                      <Select>
+                        <SelectTrigger id="reason-for-checkup">
+                          <SelectValue placeholder="Select" />
+                        </SelectTrigger>
+                        <SelectContent position="popper">
+                          <SelectItem value="routine">Routine</SelectItem>
+                          <SelectItem value="symptoms">Specific Symptoms</SelectItem>
+                          <SelectItem value="pre-surgery">Pre-Surgery</SelectItem>
+                          <SelectItem value="other">Other</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
                   </div>
                 </div>
-                <div className="mt-6">
-                  <Button>Upload</Button>
+                <div>
+                  <h2 className="text-xl font-semibold">Prescription Details</h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                    <div className="flex flex-col space-y-1.5">
+                      <label className="font-medium" htmlFor="medication-name">
+                        Medication Name(s)
+                      </label>
+                      <Input id="medication-name" placeholder="Enter medication name" />
+                    </div>
+                    <div className="flex flex-col space-y-1.5">
+                      <label className="font-medium" htmlFor="dosage">
+                        Dosage
+                      </label>
+                      <Input id="dosage" placeholder="Enter dosage" />
+                    </div>
+                    <div className="flex flex-col space-y-1.5">
+                      <label className="font-medium" htmlFor="frequency">
+                        Frequency
+                      </label>
+                      <Input id="frequency" placeholder="Enter frequency" />
+                    </div>
+                    <div className="flex flex-col space-y-1.5">
+                      <label className="font-medium" htmlFor="prescribing-doctor">
+                        Prescribing Doctor
+                      </label>
+                      <Input id="prescribing-doctor" placeholder="Enter doctor's name" />
+                    </div>
+                  </div>
                 </div>
-              </TabsContent>
-            </Tabs>
-          </div>
-
+                <Button>Submit</Button>
+              </form>
+            </TabsContent>
+          </Tabs>
         </div>
+
+
       </div>
     </div>
-  );
+  )
 }

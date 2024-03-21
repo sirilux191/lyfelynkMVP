@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Menu } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { AvatarImage, AvatarFallback, Avatar } from "@/components/ui/avatar";
+import { ModeToggle } from '@/components/mode-toggle';
 
 const Navbar = () => {
   // State for menu visibility
@@ -13,13 +14,13 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-white border-b border-gray-300">
+    <nav className="sticky top-0 z-50 w-full bg-background border-b border-muted">
       <div className="flex justify-between items-center py-4 px-8">
         <div className="flex items-center space-x-4">
           <div className="md:hidden">
-            <Button variant="secondary" onClick={handleMenuClick}>
+            <button className='p-2 border rounded-lg' onClick={handleMenuClick}>
               <Menu className="h-6 w-6" />
-            </Button>
+            </button>
           </div>
           <img
             alt="Logo"
@@ -35,37 +36,38 @@ const Navbar = () => {
             ${isMenuOpen ? 'block' : 'hidden'}`}
         >
           <div className="flex flex-col justify-center items-center h-full">
-            <Link to="/App/Home" className="text-gray-600 hover:text-gray-800 my-2">
+            <Link to="/App/Home" className="text-foreground my-2">
               Dashboard
             </Link>
-            <Link to="/App/MyHealth" className="text-gray-600 hover:text-gray-800 my-2">
+            <Link to="/App/MyHealth" className="text-foreground my-2">
               My Health
             </Link>
-            <Link to="/App/Marketplace" className="text-gray-600 hover:text-gray-800 my-2">
+            <Link to="/App/Marketplace" className="text-foreground my-2">
               Marketplace
             </Link>
-            <Link to="/App/Profile" className="text-gray-600 hover:text-gray-800 my-2">
+            <Link to="/App/Profile" className="text-foreground my-2">
               Profile
             </Link>
           </div>
         </div>
         
-        <div className="hidden md:block space-x-6">
-          <Link to="/App/Home" className="text-gray-600 hover:text-gray-800 my-2">
+        <div className="hidden md:block space-x-8">
+          <Link to="/App/Home" className="text-foreground hover:text-primary my-2">
             Dashboard
           </Link>
-          <Link to="/App/MyHealth" className="text-gray-600 hover:text-gray-800 my-2">
+          <Link to="/App/MyHealth" className="text-foreground hover:text-primary my-2">
             My Health
           </Link>
-          <Link to="/App/Marketplace" className="text-gray-600 hover:text-gray-800 my-2">
+          <Link to="/App/Marketplace" className="text-foreground hover:text-primary my-2">
             Marketplace
           </Link>
-          <Link to="/App/Profile" className="text-gray-600 hover:text-gray-800 my-2">
+          <Link to="/App/Profile" className="text-foreground hover:text-primary my-2">
             Profile
           </Link>
         </div>
 
         <div className="flex items-center">
+          <ModeToggle/>
           <Avatar className="ml-4">
             <AvatarImage alt="John Lenon" src="/placeholder.svg?height=32&width=32" />
             <AvatarFallback>JL</AvatarFallback>
