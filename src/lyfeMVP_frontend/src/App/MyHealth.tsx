@@ -1,13 +1,47 @@
-import { TableHead, TableRow, TableHeader, TableCell, TableBody, Table } from "@/components/ui/table"
+import { useState } from 'react';
+import { Table, TableBody, TableCell, TableHeader,TableHead, TableRow } from "@/components/ui/table";
 import { Upload } from 'lucide-react';
 import { Share2 } from 'lucide-react';
 import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
+import { Input } from "@/components/ui/input";
+
 
 export default function MyHealthContent() {
+  // Sample health data
+  const healthData: HealthData[] = [
+    {
+      id: "INV001",
+      status: "Uploaded",
+      dateUploaded: "Today 5:15 PM",
+    },
+    {
+      id: "INV002",
+      status: "Shared",
+      dateUploaded: "Today 5:48 AM",
+    },
+    {
+      id: "INV003",
+      status: "Uploaded",
+      dateUploaded: "Yesterday",
+    },
+    {
+      id: "INV004",
+      status: "Shared",
+      dateUploaded: "Yesterday",
+    },
+    {
+      id: "INV005",
+      status: "Shared",
+      dateUploaded: "Monday",
+    },
+  ];
+
+  const [filterValue, setFilterValue] = useState("");
+
   return (
     <div className="bg-background">
-      <Navbar/>
+      <Navbar />
       <main className="px-8 py-12">
         <section className="text-center">
           <h1 className="text-4xl font-bold mb-2">Upload and Share Your Health Data</h1>
@@ -35,45 +69,46 @@ export default function MyHealthContent() {
         <section className="container mt-8">
           <h2 className="text-2xl md:text-4xl font-semibold">Recent Activities</h2>
           <p className="pb-6 text-gray-600">Recently shared or uploaded files on LyfeLynk.</p>
+          <div className="flex items-center py-4">
+            <Input
+              placeholder="Filter Documents..."
+              value={filterValue}
+              onChange={(event) => setFilterValue(event.target.value)}
+              className="max-w-xl"
+            />
+          </div>
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead className="w-[200px]">Health Data</TableHead>
+                <TableHead className="w-3/4">Health Data</TableHead>
                 <TableHead>Status</TableHead>
-                <TableHead className="w-[150px]">Date Uploaded</TableHead>
+                <TableHead>Date Uploaded</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
-              <TableRow>
-                <TableCell className="font-medium">INV001</TableCell>
-                <TableCell>Uploaded</TableCell>
-                <TableCell>Today 5:15 PM</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell className="font-medium">INV002</TableCell>
-                <TableCell>Shared</TableCell>
-                <TableCell>Today 5:48 AM</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell className="font-medium">INV003</TableCell>
-                <TableCell>Uploaded</TableCell>
-                <TableCell>Yesterday</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell className="font-medium">INV004</TableCell>
-                <TableCell>Shared</TableCell>
-                <TableCell>Yesterday</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell className="font-medium">INV005</TableCell>
-                <TableCell>Shared</TableCell>
-                <TableCell>Monday</TableCell>
-              </TableRow>
+              {healthData
+                .filter(row =>
+                  row.id.toLowerCase().includes(filterValue.toLowerCase()) ||
+                  row.status.toLowerCase().includes(filterValue.toLowerCase()) ||
+                  row.dateUploaded.toLowerCase().includes(filterValue.toLowerCase())
+                )
+                .map((row, index) => (
+                  <TableRow key={index}>
+                    <TableCell>{row.id}</TableCell>
+                    <TableCell>{row.status}</TableCell>
+                    <TableCell>{row.dateUploaded}</TableCell>
+                  </TableRow>
+                ))}
             </TableBody>
           </Table>
         </section>
       </main>
     </div>
-  )
+  );
 }
 
+interface HealthData {
+  id: string;
+  status: string;
+  dateUploaded: string;
+}

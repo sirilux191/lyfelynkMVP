@@ -5,6 +5,7 @@ import { SelectValue, SelectTrigger, SelectItem, SelectContent, Select } from "@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ChevronLeft } from "lucide-react";
 import Navbar from "@/App/Navbar";
+import FileUpload from "./file-upload"
 
 export default function UploadContent() {
   return (
@@ -31,13 +32,7 @@ export default function UploadContent() {
               <TabsTrigger className="w-1/2" value="Form">Form</TabsTrigger>
             </TabsList>
             <TabsContent value="Document">
-              <p className="text-sm mb-4 text-gray-500">Supported file formats include PDFs, CSVs, XML, JPGs and JPEGs.</p>
-              <div className="flex flex-col items-center justify-center p-6 border-2 border-dashed border-gray-300 rounded-lg mb-4">
-                <Button className="mb-2">Add Files</Button>
-                <span className="text-sm text-gray-500">or</span>
-                <span className="text-sm text-gray-500">drag your files here</span>
-              </div>
-              <Button>Upload</Button>
+              <FileUpload/>
             </TabsContent>
 
             <TabsContent value="Form">
