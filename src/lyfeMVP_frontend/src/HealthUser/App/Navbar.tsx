@@ -4,6 +4,7 @@ import { Menu } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { AvatarImage, AvatarFallback, Avatar } from "@/components/ui/avatar";
 import { ModeToggle } from '@/components/mode-toggle';
+import UniqueID from './sub/UniqueIdDisplay';
 
 const Navbar = () => {
   // State for menu visibility
@@ -68,10 +69,11 @@ const Navbar = () => {
 
         <div className="flex items-center">
           <ModeToggle/>
-          <Avatar className="ml-4">
+          <Avatar className="mx-4">
             <AvatarImage alt="John Lenon" src="/placeholder.svg?height=32&width=32" />
             <AvatarFallback>JL</AvatarFallback>
           </Avatar>
+          <UniqueID/>
           <Button className="ml-4">
             Connect
           </Button>

@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input"
 import { SelectValue, SelectTrigger, SelectItem, SelectContent, Select } from "@/components/ui/select"
 import { Button } from "@/components/ui/button"
 import Navbar from "./Navbar";
+import UniqueID from "./sub/UniqueIdDisplay";
 
 export default function ProfileContent() {
   return (
@@ -19,16 +20,12 @@ export default function ProfileContent() {
                   <AvatarImage alt="John Lenon" src=""/>
                   <AvatarFallback className="text-4xl">JL</AvatarFallback>
                 </Avatar>
+
+                <div className="flex space-x-2 py-4">
+                  <p>ID Number-</p> <UniqueID/>
+                </div> 
               </div>
               <div className="mt-6 grid grid-cols-2 gap-y-6 gap-x-4 ">
-                <div>
-                  <label className="block text-sm font-medium leading-5 text-gray-700" htmlFor="username">
-                    Username
-                  </label>
-                  <div className="mt-1">
-                    <Input id="username" placeholder="Username" />
-                  </div>
-                </div>
                 <div>
                   <label className="block text-sm font-medium leading-5 text-gray-700" htmlFor="pincode">
                     Pincode
@@ -122,6 +119,15 @@ export default function ProfileContent() {
                   </label>
                   <div className="mt-1">
                     <Input id="weight" placeholder="Weight in Kg" />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium leading-5 text-gray-700" htmlFor="weight">
+                    Heart Rate
+                  </label>
+                  <div className="mt-1">
+                    <Input id="weight" placeholder="Heart Rate" />
                   </div>
                 </div>
               </div>

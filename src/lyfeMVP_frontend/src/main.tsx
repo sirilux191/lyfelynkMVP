@@ -5,12 +5,12 @@ import './index.css';
 import NotFoundContent from './NotFoundPage';
 import FirstPageContent from './onboarding/FirstPage';
 import RegisteredContent from './onboarding/RegisteredPage';
-import MarketplaceContent from './App/Marketplace';
-import DashboardContent from './App/Dashboard';
-import MyHealthContent from './App/MyHealth';
-import ProfileContent from './App/Profile';
-import UploadContent from './App/sub/UploadPage';
-import ShareContent from './App/sub/SharePage';
+import MarketplaceContent from './HealthUser/App/Marketplace';
+import DashboardContent from './HealthUser/App/Dashboard';
+import MyHealthContent from './HealthUser/App/MyHealth';
+import ProfileContent from './HealthUser/App/Profile';
+import UploadContent from './HealthUser/App/sub/UploadPage';
+import ShareContent from './HealthUser/App/sub/SharePage';
 import RegisterPage1Content from './onboarding/RegisterPage/RegisterPage1';
 import RegisterPage2Content from './onboarding/RegisterPage/RegisterPage2';
 import RegisterPage3Content from './onboarding/RegisterPage/RegisterPage3';
@@ -19,7 +19,7 @@ import { ThemeProvider } from "@/components/theme-provider"; // Importing the Th
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <FirstPageContent />,
+    element: <FirstPageContent/>,
     errorElement: <NotFoundContent />
   },
   {

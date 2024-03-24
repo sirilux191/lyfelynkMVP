@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input"
 import { SelectValue, SelectTrigger, SelectItem, SelectContent, Select } from "@/components/ui/select"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ChevronLeft } from "lucide-react";
-import Navbar from "@/App/Navbar";
+import Navbar from "@/HealthUser/App/Navbar";
 import FileUpload from "./file-upload"
 
 export default function UploadContent() {
@@ -25,7 +25,7 @@ export default function UploadContent() {
           </div>
         <h1 className="mt-4 text-4xl font-bold">Upload your Health Data</h1>
         <p className="mt-2 text-lg text-gray-600">Choose a suitable format to upload your data.</p>
-        <div className="mt-6 w-full max-w-2xl">
+        <div className="mt-6 w-full max-w-4xl">
           <Tabs defaultValue="Document">
             <TabsList className="w-full">
               <TabsTrigger className="w-1/2" value="Document">Document</TabsTrigger>

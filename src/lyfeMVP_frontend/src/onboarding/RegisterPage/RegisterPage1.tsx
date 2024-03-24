@@ -29,7 +29,6 @@ export default function RegisterPage1Content() {
           </div>
 
           <div className="grid grid-cols-2 gap-4 py-4">
-            <Input placeholder="Username" />
             <Input placeholder="Pincode" />
             <Input placeholder="Name" />
             <Select>
@@ -62,6 +61,7 @@ export default function RegisterPage1Content() {
             <Input placeholder="Height in cm" />
             <Input placeholder="State" />
             <Input placeholder="Weight in Kg" />
+            <Input placeholder="Heart Rate" />
           </div>
           <Link to='/Health-User/Register'>
             <Button className="w-full">Submit</Button>
