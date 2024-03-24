@@ -27,19 +27,19 @@ export default function ProfileContent() {
               </div>
               <div className="mt-6 grid grid-cols-2 gap-y-6 gap-x-4 ">
                 <div>
-                  <label className="block text-sm font-medium leading-5 text-gray-700" htmlFor="pincode">
-                    Pincode
-                  </label>
-                  <div className="mt-1">
-                    <Input id="pincode" placeholder="Pincode" />
-                  </div>
-                </div>
-                <div>
                   <label className="block text-sm font-medium leading-5 text-gray-700" htmlFor="name">
                     Name
                   </label>
                   <div className="mt-1">
                     <Input id="name" placeholder="Name" />
+                  </div>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium leading-5 text-gray-700" htmlFor="pincode">
+                    Pincode
+                  </label>
+                  <div className="mt-1">
+                    <Input id="pincode" placeholder="Pincode" />
                   </div>
                 </div>
                 <div>

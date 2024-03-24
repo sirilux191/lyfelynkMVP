@@ -29,11 +29,11 @@ export default function RegisterPage1Content() {
           </div>
 
           <div className="grid grid-cols-2 gap-4 py-4">
-            <Input placeholder="Pincode" />
             <Input placeholder="Name" />
+            <Input placeholder="Pincode" />
             <Select>
               <SelectTrigger id="gender">
-                <SelectValue placeholder="Select" />
+                <SelectValue placeholder="Gender" />
               </SelectTrigger>
               <SelectContent position="popper">
                 <SelectItem value="male">Male</SelectItem>
@@ -44,7 +44,7 @@ export default function RegisterPage1Content() {
             <Input placeholder="mm/dd/yyyy" type="date" />
             <Select>
               <SelectTrigger id="blood-type">
-                <SelectValue placeholder="Select" />
+                <SelectValue placeholder="Blood Type" />
               </SelectTrigger>
               <SelectContent position="popper">
                 <SelectItem value="a+">A+</SelectItem>
